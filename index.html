@@ -81,8 +81,8 @@
             return parts;
         }
         Promise.all([
-            mergeFiles(getParts("Build/ultrakill.data.unityweb", 1, 4)),
-            mergeFiles(getParts("Build/ultrakill.wasm.unityweb", 1, 2))
+            mergeFiles(getParts("Build/ultrakill.data.unityweb.part1", "Build/ultrakill.data.unityweb.part2", "Build/ultrakill.data.unityweb.part3", "Build/ultrakill.data.unityweb.part4")),
+            mergeFiles(getParts("Build/ultrakill.wasm.unityweb.part1", "Build/ultrakill.wasm.unityweb.part2"))
         ]).then(([dataUrl, wasmurl]) => {
             document.querySelector("#unity-canvas").hidden = false;
             createUnityInstance(document.querySelector("#unity-canvas"), {
